@@ -1,4 +1,4 @@
-#include "arraystack.h"
+#include "../includes/arraystack.h"
 #include <iostream>
 
 ArrayStack::ArrayStack(int _capacity){

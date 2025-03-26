@@ -1,26 +1,26 @@
 #include <iostream>
-#include "linkedlist.h"
+#include "../includes/linkedlist.h"
 
-LinkedList::LinkedList(){
+template <typename T> LinkedList<T>::LinkedList(){
     this->top = nullptr;
     this->capacity = 0;
 }
 
-void LinkedList::push(int _value){
+template <typename T> void LinkedList<T>::push(T _value){
     if(this->top == nullptr){
-        this->top = new Node(_value);
+        this->top = new Node<T>(_value);
     } else {
-        Node *aux = new Node(_value);
+        Node<T> *aux = new Node<T>(_value);
         aux->next = this->top;
         this->top = aux;
     }
     this->capacity++;
 }
 
-int LinkedList::pop(){
+template <typename T> T LinkedList<T>::pop(){
     if(this->capacity != 0 && this->top != nullptr){
-        int value = this->top->value;
-        Node *node_delete = this->top;
+        T value = this->top->value;
+        Node<T> *node_delete = this->top;
         this->top = this->top->next;
         delete node_delete;
         this->capacity--;
@@ -31,12 +31,12 @@ int LinkedList::pop(){
     }
 }
 
-int LinkedList::getCapacity(){
+template <typename T> int LinkedList<T>::getCapacity(){
     return this->capacity;
 }
 
 int main(){
-    LinkedList linked;
+    LinkedList<int> linked;
     linked.push(10);
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
     linked.push(3);

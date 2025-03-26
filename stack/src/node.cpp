@@ -1,12 +1,12 @@
-#include "node.h"
+#include "../includes/node.h"
 #include <iostream>
 
 
-Node::Node(int _value){
+template <typename T> Node<T>::Node(T _value){
     this->value = _value;
     this->next = nullptr;
 }
 
-Node::~Node(){
+template <typename T> Node<T>::~Node(){
     std::cout << "Nodo destruido" << std::endl;
 }

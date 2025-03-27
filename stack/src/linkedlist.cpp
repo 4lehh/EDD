@@ -1,5 +1,7 @@
 #include <iostream>
 #include "../includes/linkedlist.h"
+#include <string>
+#include <optional>
 
 template <typename T> LinkedList<T>::LinkedList(){
     this->top = nullptr;
@@ -27,7 +29,7 @@ template <typename T> T LinkedList<T>::pop(){
         return value;
     } else {
         std::cerr << "No hay nodos" << std::endl;
-        return -1;
+        return nullptr;
     }
 }
 
@@ -36,12 +38,12 @@ template <typename T> int LinkedList<T>::getCapacity(){
 }
 
 int main(){
-    LinkedList<int> linked;
-    linked.push(10);
+    LinkedList<std::string> linked;
+    linked.push("hola");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
-    linked.push(3);
+    linked.push("pene");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl; 
-    linked.push(-1);
+    linked.push("nolose");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
     std::cout << linked.pop() << std::endl;
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;

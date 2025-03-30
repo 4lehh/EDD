@@ -19,7 +19,7 @@ template <typename T> void LinkedList<T>::push(T _value){
     this->capacity++;
 }
 
-template <typename T> T LinkedList<T>::pop(){
+template <typename T> std::optional<T> LinkedList<T>::pop(){
     if(this->capacity != 0 && this->top != nullptr){
         T value = this->top->value;
         Node<T> *node_delete = this->top;
@@ -29,7 +29,7 @@ template <typename T> T LinkedList<T>::pop(){
         return value;
     } else {
         std::cerr << "No hay nodos" << std::endl;
-        return nullptr;
+        return std::nullopt;
     }
 }
 
@@ -45,11 +45,12 @@ int main(){
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl; 
     linked.push("nolose");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
-    std::cout << linked.pop() << std::endl;
+    std::cout << *(linked.pop()) << std::endl;
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
-    std::cout << linked.pop() << std::endl;
+    std::cout << *(linked.pop()) << std::endl;
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
-    std::cout << linked.pop() << std::endl;
+    std::cout << *(linked.pop()) << std::endl;
+    std::cout << *(linked.pop()) << std::endl;
     
     // Resultado: 
     // Capacidad: 3

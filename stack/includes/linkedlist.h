@@ -1,6 +1,7 @@
 #pragma once
 #include "node.h"
 #include "../src/node.cpp"
+#include <optional>
 
 template <typename T> class LinkedList{
     private:
@@ -9,6 +10,6 @@ template <typename T> class LinkedList{
     public:
         LinkedList<T>();
         void push(T);
-        T pop();
+        std::optional<T> pop();
         int getCapacity();
 };

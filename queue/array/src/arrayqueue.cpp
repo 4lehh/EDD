@@ -1,4 +1,4 @@
-#include "arrayqueue.h"
+#include "../include/arrayqueue.h"
 #include <iostream>
 
 ArrayQueue::ArrayQueue(int _capacity){

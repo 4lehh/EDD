@@ -39,11 +39,11 @@ template <typename T> int LinkedList<T>::getCapacity(){
 
 int main(){
     LinkedList<std::string> linked;
-    linked.push("hola");
+    linked.push("que");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
-    linked.push("pene");
+    linked.push("so");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl; 
-    linked.push("nolose");
+    linked.push("nigga");
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;
     std::cout << *(linked.pop()) << std::endl;
     std::cout << "Capacidad: " << linked.getCapacity() << std::endl;

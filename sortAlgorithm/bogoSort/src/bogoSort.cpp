@@ -59,10 +59,10 @@ void BogoSort::sort(){
 }
 
 int main(){
-    int arr[] = {6, 1, 5, 2, 4, 3};
+    int arr[] = {1, 544, 21, 4234, -3};
     auto start = std::chrono::high_resolution_clock::now();
     
-    BogoSort sorting(arr, 6);
+    BogoSort sorting(arr, 5);
     sorting.showSort();
     sorting.sort();
     
